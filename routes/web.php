@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StaticPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [StaticPageController::class, 'home']);
+Route::get('about', [StaticPageController::class, 'about']);
+Route::get('help', [StaticPageController::class, 'help']);
