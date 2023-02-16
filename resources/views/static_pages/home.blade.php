@@ -10,6 +10,8 @@
             <span> already coming!</span>
         </p>
         <p class="mt-3 text-xl text-gray-400">Start learning</p>
-        <button class="mt-3 p-2 rounded-lg text-gray-200 shadow-sm bg-green-400 ">Register now</button>
+        <button class="mt-3 p-2 rounded-lg text-gray-200 shadow-sm bg-green-400 ">
+            <a href="{{ route('signup') }}">Signup</a> 
+        </button>
     </div>
 @endsection
