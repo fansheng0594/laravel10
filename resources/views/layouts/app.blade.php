@@ -13,7 +13,7 @@
     <div class="content-center">
         @yield('contents') 
     </div>
-    
+     
     @include('layouts.footer')
 
     @vite('resources/js/app.js')
