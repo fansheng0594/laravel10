@@ -12,7 +12,10 @@
                 @csrf
                 <div class="flex flex-col space-y-2 mx-8">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" class="form-input rounded-md border-gray-300">
+                    @error('name')
+                        <span>{{ $message }}</span> 
+                    @enderror
+                    <input type="text" id="name" name="name" class="form-input rounded-md border-gray-300" value="{{ old('name') }}">
                 </div>
 
                 <div class="flex flex-col space-y-2 mx-8">
