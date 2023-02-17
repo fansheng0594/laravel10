@@ -10,30 +10,14 @@
         <div class="py-4">
             <form class="flex flex-col space-y-3" action="{{ route('users.store') }}" method="POST">
                 @csrf
-                <div class="flex flex-col space-y-2 mx-8">
-                    <label for="name">Name:</label>
-                    @error('name')
-                        <span>{{ $message }}</span> 
-                    @enderror
-                    <input type="text" id="name" name="name" class="form-input rounded-md border-gray-300" value="{{ old('name') }}">
-                </div>
-
-                <div class="flex flex-col space-y-2 mx-8">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" class="form-input rounded-md border-gray-300">
-                </div>
-                
-                <div class="flex flex-col space-y-2 mx-8">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" class="form-input rounded-md border-gray-300">
-                </div>
-
-                <div class="flex flex-col space-y-2 mx-8">
-                    <label for="password_confirmation">Password Confirmation:</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-input rounded-md border-gray-300">
-                </div>
-                <button class="py-1 mx-8 bg-blue-500 rounded-md text-gray-200 text-lg shadow-md">register</button>
-
+                <x-forms.input name="name" type="text" />    
+                <x-forms.input name="email" type="text" />    
+                <x-forms.input name="password" type="password" />    
+                <x-forms.input name="password_confirmation" type="password" />    
+                {{-- <button class="py-1 mx-8 bg-blue-500 rounded-md text-gray-200 text-lg shadow-md">register</button> --}}
+                <x-forms.button type="submit" class="py-1 mx-8 bg-blue-500 rounded-md text-gray-200 text-lg shadow-md">
+                    register
+                </x-forms.button>
            </form>
         </div>
     </div>
