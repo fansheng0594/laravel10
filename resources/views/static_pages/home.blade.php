@@ -8,8 +8,11 @@
             <span> already coming!</span>
         </p>
         <p class="mt-3 text-xl text-gray-400">Start learning</p>
-        <button class="mt-3 p-2 rounded-lg text-gray-200 shadow-sm bg-green-400 ">
-            <a href="{{ route('signup.store') }}">Signup</a> 
-        </button>
+
+        @guest
+            <button class="mt-3 p-2 rounded-lg text-gray-200 shadow-sm bg-green-400 ">
+                <a href="{{ route('signup.store') }}">Signup</a>
+            </button>
+        @endguest
     </div>
 </x-app-layout>
