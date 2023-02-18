@@ -1,7 +1,3 @@
-@extends('layouts.app')
-
-@section('title', $user->name . ' imformation')
-
-    @section('contents')
-    {{ $user->email }} 
-@endsection
+<x-app-layout>
+    <x-slot:title>show</x-slot:title>
+</x-app-layout>

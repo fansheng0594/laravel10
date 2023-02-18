@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Hash;
 
 class StoreUserRequest extends FormRequest
 {
@@ -26,5 +27,13 @@ class StoreUserRequest extends FormRequest
             'email' => 'required|email|max:32',
             'password' => 'required|min:6|max:16|confirmed',
         ];
+    }
+
+    /**
+     * Handle a passed validation attempt.
+     */
+    protected function passedValidation(): void
+    {
+        $this->merge(['password' => Hash::make($this->password)]);
     }
 }

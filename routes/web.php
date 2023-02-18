@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ Route::get('/', [StaticPageController::class, 'home'])->name('home');
 Route::get('about', [StaticPageController::class, 'about'])->name('about');
 Route::get('help', [StaticPageController::class, 'help'])->name('help');
 
-Route::get('signup', [UserController::class, 'create'])->name('signup');
+Route::get('signup', [SignupController::class, 'create'])->name('signup');
+Route::post('signup', [SignupController::class, 'store'])->name('signup.store');
 Route::get('signin', [UserController::class, 'signin'])->name('signin');
 Route::resource('users', UserController::class);
