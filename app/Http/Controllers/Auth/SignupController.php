@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,6 +25,6 @@ class SignupController extends Controller
         // TODO registered event FIXME
 
         Auth::login($user);
-        return to_route('users.show', ['user' => $user]);
+        return redirect(RouteServiceProvider::HOME);
     }
 }
