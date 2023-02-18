@@ -1,6 +1,6 @@
 <div class="flex justify-between py-4 bg-slate-700">
     <div class="flex px-8 space-x-3 items-center">
-        <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
+        <x-application-logo class="w-8 h-8" />
         <a class="text-xl text-white" href="{{ route('home') }}">Laravel 10</a>
     </div>
     <div class="px-8">

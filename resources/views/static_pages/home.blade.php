@@ -1,8 +1,6 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot:title>Home</x-slot:title>
 
-@section('title', 'Home')
-
-@section('contents')
     <div class="m-8 p-4 bg-gray-300">
         <h1 class="text-4xl font-bold text-gray-600">Hello Laravel</h1>
         <p class="mt-3 text-2xl text-gray-500">
@@ -14,4 +12,4 @@
             <a href="{{ route('signup') }}">Signup</a> 
         </button>
     </div>
-@endsection
+</x-app-layout>

@@ -25,4 +25,9 @@ class UserController extends Controller
         $user = User::create($request->input());
         return to_route('users.show', ['user' => $user]);
     }
+
+    public function signin(Request $request)
+    {
+        
+    }
 }

@@ -1,6 +1,5 @@
-@extends('layouts.app')
-
-@section('title', 'About')
-    @section('contents')
+<x-app-layout>
+    <x-slot:title>About</x-slot:title>
+    
     <h1>About Page</h1>
-@endsection
+</x-app-layout>

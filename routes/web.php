@@ -20,4 +20,5 @@ Route::get('about', [StaticPageController::class, 'about'])->name('about');
 Route::get('help', [StaticPageController::class, 'help'])->name('help');
 
 Route::get('signup', [UserController::class, 'create'])->name('signup');
+Route::get('signin', [UserController::class, 'signin'])->name('signin');
 Route::resource('users', UserController::class);
