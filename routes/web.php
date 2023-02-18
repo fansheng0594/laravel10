@@ -19,8 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [StaticPageController::class, 'home'])->name('home');
 Route::get('about', [StaticPageController::class, 'about'])->name('about');
 Route::get('help', [StaticPageController::class, 'help'])->name('help');
-
-Route::get('signup', [SignupController::class, 'create'])->name('signup');
-Route::post('signup', [SignupController::class, 'store'])->name('signup.store');
-Route::get('signin', [UserController::class, 'signin'])->name('signin');
+Route::middleware(['guest'])->group(function () {
+    Route::get('signup', [SignupController::class, 'create'])->name('signup');
+    Route::post('signup', [SignupController::class, 'store'])->name('signup.store');
+    Route::get('signin', [UserController::class, 'signin'])->name('signin');
+});
 Route::resource('users', UserController::class);
