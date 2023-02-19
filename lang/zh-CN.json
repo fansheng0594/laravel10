@@ -4,5 +4,7 @@
     "Password": "密码",
     "Confirm Password": "确认密码",
     "Already registered?": "已经注册过？",
-    "Register": "注册"
+    "Register": "注册",
+    "Profile": "个人信息",
+    "Log Out": "退出"
 }
