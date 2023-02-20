@@ -112,4 +112,6 @@ return [
 
     'password_timeout' => 10800,
 
+    'throttle_signin' => env('THROTTLE_SIGNIN', 100),
+
 ];
