@@ -18,3 +18,4 @@ yarn-error.log
 /.vscode
 .phpunit.result.cache
 .nvimlog
+/public/vendor/telescope
