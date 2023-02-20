@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-slot:title>Signin</x-slot:title>
     
-    <form action="{{ route('signup.store') }}" method="POST">
+    <form action="{{ route('signin.store') }}" method="POST">
         @csrf
         
         {{-- Email --}}
