@@ -8,7 +8,13 @@
             <li><a href="{{ route('help') }}">help</a></li>
             <li><a href="{{ route('about') }}">about</a></li>
         </ul>
-        <!-- Settings Dropdown -->
+        @guest
+            <ul class="flex space-x-4 text-xl text-slate-400 sm:ml-6">
+                <li><a href="{{ route('signup') }}">signup</a></li>
+                <li><a href="{{ route('signin') }}">signin</a></li>
+            </ul>
+        @endguest
+        <!--User Settings Dropdown -->
         @auth
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
