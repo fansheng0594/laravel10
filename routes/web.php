@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserController;
@@ -22,6 +24,9 @@ Route::get('help', [StaticPageController::class, 'help'])->name('help');
 Route::middleware(['guest'])->group(function () {
     Route::get('signup', [SignupController::class, 'create'])->name('signup');
     Route::post('signup', [SignupController::class, 'store'])->name('signup.store');
-    Route::get('signin', [UserController::class, 'signin'])->name('signin');
+    Route::get('signin', [AuthenticatedController::class, 'create'])->name('signin');
+});
+Route::middleware(['auth'])->group(function () {
+    Route::post('logout', [AuthenticatedController::class, 'destroy'])->name('logout');
 });
 Route::resource('users', UserController::class);
