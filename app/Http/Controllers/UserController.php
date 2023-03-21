@@ -12,12 +12,8 @@ class UserController extends Controller
 {
     public function show(User $user): View
     {   
+        $this->authorize('update', $user);
         return view('users.show', ['user' => $user]); 
     }
 
-
-    public function signin(Request $request)
-    {
-        
-    }
 }
